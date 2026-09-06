@@ -3,15 +3,17 @@ public class SavingAccount extends Account{
  private final double interestRate=8;
 
  public SavingAccount(int accountNumber,Customer customer,double minimumBalance){
-        super(accountNumber,customer);
+        super(accountNumber,customer,"SavingAccount");
         this.minimumBalance=minimumBalance;
  }
- public void withdraw(double amount){
+ public boolean withdraw(double amount){
         if(amount > 0 && getBalance()-amount>=minimumBalance){
             super.reduceBalance(amount);
             System.out.println("Transaction completed : Withdrawal successfull");
+            return true;
         }else{
             System.out.println("Invalid Transaction");
+            return false;
         }
  }
  public void calculateInterest(){

@@ -1,4 +1,4 @@
 public interface Transaction {
-    void deposit(double amount);
-    void withdraw(double amount);
+    boolean deposit(double amount);
+    boolean withdraw(double amount);
 }

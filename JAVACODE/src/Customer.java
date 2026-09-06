@@ -3,9 +3,10 @@ public class Customer {
     private String name;
     private String phone;
     private String email;
-
-    public Customer(int customerId,String name,String phone,String email){
-        this.customerId=customerId;
+    private static int incrementor=1;
+    public Customer(String name,String phone,String email){
+        this.customerId=incrementor;
+        incrementor++;
         this.name=name;
         this.phone=phone;
         this.email=email;
