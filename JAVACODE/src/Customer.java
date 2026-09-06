@@ -10,12 +10,7 @@ public class Customer {
         this.phone=phone;
         this.email=email;
     }
-    public void displayCustomerDetails(){
-        System.out.println("Customer ID : "+customerId);
-        System.out.println("Name : "+name);
-        System.out.println("Phone : "+phone);
-        System.out.println("Email : "+email);
-    }
+
     public String getName(){
         return name;
     }
@@ -36,5 +31,12 @@ public class Customer {
     }
     public void setEmail(String email){
         this.email=email;
+    }
+
+    public void displayCustomerDetails(){
+        System.out.println("Customer ID : "+customerId);
+        System.out.println("Name : "+name);
+        System.out.println("Phone : "+phone);
+        System.out.println("Email : "+email);
     }
 }
