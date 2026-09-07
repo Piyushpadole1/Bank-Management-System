@@ -7,8 +7,8 @@ public class Bank {
    private static ArrayList<Account> accountList = new ArrayList<>();
 
    public void addCustomer(Customer c){
-        customerList.add(c);
-       System.out.println("Customer Added Successfully");
+       customerList.add(c);
+       System.out.println("Customer Added Successfully with Customer id :"+c.getCustomerId());
    }
 
     public Customer findCustomer(int customerId){
@@ -26,12 +26,13 @@ public class Bank {
            System.out.print("Customer Name: "+customerList.get(i).getName()+" ");
            System.out.print("Customer Email: "+customerList.get(i).getEmail()+" ");
            System.out.print("Customer Mobile Number: "+customerList.get(i).getPhone()+" ");
+           System.out.println();
        }
     }
 
     public void addAccount(Account a){
        accountList.add(a);
-       System.out.println("Account Added Successfully");
+       System.out.println("Account Added Successfully with Account Number : "+a.getAccountNumber());
     }
 
     public Account findAccount(int accountNumber){
@@ -48,6 +49,7 @@ public class Bank {
             System.out.print("Account No. :"+accountList.get(i).getAccountNumber()+" ");
             System.out.print("Account Holder :"+accountList.get(i).getCustomer().getName()+" ");
             System.out.print("Balance :"+accountList.get(i).getBalance()+" ");
+            System.out.println();
         }
 //        accountList.forEach(c-> System.out.println("Account No. :"+c.getAccountNumber()+" "+
 //                                                            "Account Holder :"+c.getCustomer().getName()+" "+
@@ -95,4 +97,18 @@ public class Bank {
            System.out.println("Transaction Failure!");
        }
     }
-}
+
+    protected boolean checker(int accountNumber){
+        Account a = findAccount(accountNumber);
+        return a==null?false:true;
+    }
+
+    protected double getBalance(int accountNo){
+       Account a=findAccount(accountNo);
+       if (a!=null) {
+           return a.getBalance();
+       }
+        System.out.println("Account Not Found!");
+        return -1;
+       }
+    }

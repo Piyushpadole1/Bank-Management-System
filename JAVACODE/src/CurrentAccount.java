@@ -11,8 +11,10 @@ public class CurrentAccount extends Account {
         if (amount > 0 && super.getBalance()+overdraftLimit-amount>=0){
             super.reduceBalance(amount);
             System.out.println("Transaction Completed : Withdrawal Successfull");
+            return true;
         }else{
             System.out.println("Invalid Amount");
+            return false;
         }
     }
 }

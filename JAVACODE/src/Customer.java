@@ -3,7 +3,7 @@ public class Customer {
     private String name;
     private String phone;
     private String email;
-    private static int incrementor=1;
+    private static int incrementor=1001;
     public Customer(String name,String phone,String email){
         this.customerId=incrementor;
         incrementor++;

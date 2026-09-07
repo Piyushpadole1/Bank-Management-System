@@ -1,10 +1,9 @@
 public class SavingAccount extends Account{
- private double minimumBalance;
+ private final double minimumBalance=5000;
  private final double interestRate=8;
 
- public SavingAccount(int accountNumber,Customer customer,double minimumBalance){
+ public SavingAccount(int accountNumber,Customer customer){
         super(accountNumber,customer,"SavingAccount");
-        this.minimumBalance=minimumBalance;
  }
  public boolean withdraw(double amount){
         if(amount > 0 && getBalance()-amount>=minimumBalance){
